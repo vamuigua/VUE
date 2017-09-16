@@ -10,6 +10,12 @@ import {MovieService} from '../../services/movie.service';
 })
 export class MoviesComponent  { 
 	constructor(private _moviesService: MovieService){
+		this._moviesService.getPopular().subscribe(res => {
+			// console.log(res.results);
+		});
 
+		this._moviesService.getInTheaters().subscribe(res => {
+			console.log(res.results);
+		});
 	}
 }
