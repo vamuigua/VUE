@@ -1,3 +1,15 @@
+<div class="jumbotron">
+	<div class="container">
+		<h1>Search...</h1>
+		<form (submit)="searchMovies()">
+			<input type="text" class="form-control" [(ngModel)]="searchStr" name="searchStr">
+			<br>
+			<button class="btn btn-primary btn-lg">FIND</button>
+		</form>
+	</div>
+</div>
+
+<!--POPUAR MOVIES-->
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h3 class="panel-title">Popular Movies</h3>
@@ -16,6 +28,7 @@
 	</div>
 </div>
 
+<!--IN THEATERS-->
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h3 class="panel-title">In Theaters</h3>
