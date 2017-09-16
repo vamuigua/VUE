@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import {MovieService} from '../../services/movie.service';
 
-
-
 @Component({
 	moduleId: module.id,
   selector: 'movies',
@@ -11,7 +9,7 @@ import {MovieService} from '../../services/movie.service';
 export class MoviesComponent  { 
 	popularList:Array<Object>;
 	theatersList:Array<Object>;
-
+	searchStr:string;
 
 	constructor(private _moviesService: MovieService){
 		this._moviesService.getPopular().subscribe(res => {
@@ -21,5 +19,9 @@ export class MoviesComponent  {
 		this._moviesService.getInTheaters().subscribe(res => {
 			this.theatersList = res.results;
 		});
+	}
+
+	searchMovies(){
+		console.log(this.searchStr);
 	}
 }
